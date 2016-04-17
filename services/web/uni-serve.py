@@ -57,7 +57,6 @@ class monoframe:
 		for cell_index in range(8):
 			chunk = chunks[index[cell_index]]
 			cv = int(chunk, 16)
-			print "%s - %s" % (cv, cell_index)
 			paint_monoline(cell_index,cv,red,green,blue)
 		UH.show()
 	       
