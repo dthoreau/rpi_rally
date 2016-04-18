@@ -1,0 +1,97 @@
+---
+swagger: "2.0"
+info:
+  description: "A second cut at writing the code initial formed in web.py for the\
+    \ PiMoroni UnicornHAT\n"
+  version: "0.1.0"
+  title: "Uni-serve"
+host: "192.168.1.88:8080"
+schemes:
+- "http"
+paths:
+  /ddot:
+    put:
+      tags:
+      - "default_controller"
+      description: "Paint a single pixel"
+      operationId: "controllers.default_controller.ddot_put"
+      parameters:
+      - name: "red"
+        in: "query"
+        description: "Red component of pixel"
+        required: false
+        type: "number"
+        format: "integer"
+      - name: "green"
+        in: "query"
+        description: "Green component of pixel"
+        required: false
+        type: "number"
+        format: "integer"
+      - name: "blue"
+        in: "query"
+        description: "Blue component of pixel"
+        required: false
+        type: "number"
+        format: "integer"
+      - name: "x"
+        in: "query"
+        description: "x component of pixel"
+        required: false
+        type: "number"
+        format: "integer"
+      - name: "y"
+        in: "query"
+        description: "y component of pixel"
+        required: false
+        type: "number"
+        format: "integer"
+      responses:
+        200:
+          description: "Success"
+  /dot:
+    put:
+      tags:
+      - "default_controller"
+      description: "paint pixel"
+      operationId: "controllers.default_controller.dot_put"
+      parameters:
+      - name: "stdin"
+        in: "query"
+        description: "string to paint"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Success"
+  /monoframe:
+    put:
+      tags:
+      - "default_controller"
+      description: "Shows single frame"
+      operationId: "controllers.default_controller.monoframe_put"
+      parameters: []
+      responses:
+        200:
+          description: "Success"
+  /monoline:
+    put:
+      tags:
+      - "default_controller"
+      description: "Sets single line"
+      operationId: "controllers.default_controller.monoline_put"
+      parameters: []
+      responses:
+        200:
+          description: "Success"
+  /show:
+    get:
+      tags:
+      - "default_controller"
+      description: "Show all set pixels"
+      operationId: "controllers.default_controller.show_get"
+      parameters: []
+      responses:
+        200:
+          description: "Success"
+definitions: {}
