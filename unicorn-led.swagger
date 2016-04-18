@@ -1,0 +1,83 @@
+# Example YAML to get you started quickly.
+# Be aware that YAML has indentation based scoping.
+# Code completion support is available so start typing for available options.
+swagger: '2.0'
+
+# This is your document metadata
+info:
+  version: "0.1.0"
+  title: Uni-serve
+  description: |
+    A second cut at writing the code initial formed in web.py for the PiMoroni UnicornHAT
+    
+
+host: "192.168.1.88:8080"
+
+schemes:
+  - http
+
+paths:
+  /dot:
+    put:
+      description: paint pixel
+      parameters:
+        - name: stdin
+          in: query
+          required: true
+          description: string to paint
+          type: string
+      responses:
+        200:
+          description: Success
+          
+  /ddot:
+    put:
+      description: Paint a single pixel
+      parameters:
+        - name: red
+          in: query
+          description: Red component of pixel
+          type: number
+          format: integer
+        - name: green
+          in: query
+          description: Green component of pixel
+          type: number
+          format: integer
+        - name: blue
+          in: query
+          description: Blue component of pixel
+          type: number
+          format: integer
+        - name: x
+          in: query
+          description: x component of pixel
+          type: number
+          format: integer
+        - name: y
+          in: query
+          description: y component of pixel
+          type: number
+          format: integer
+      responses:
+        200: 
+          description: Success
+  /show:
+    get:
+      description: Show all set pixels
+      responses:
+        200:
+          description: Success
+  /monoframe:
+    put:
+      description: Shows single frame
+      responses:
+        200: 
+          description: Success
+
+  /monoline:
+    put:
+      description: Sets single line
+      responses:
+        200:
+          description: Success
