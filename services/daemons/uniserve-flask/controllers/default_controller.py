@@ -1,14 +1,14 @@
 
-def ddot_put(red = None, green = None, blue = None, x = None, y = None) -> str:
+def all_pixels_get() -> str:
     return 'do some magic!'
 
-def dot_put(stdin) -> str:
+def dot_x_put(colour, x, y) -> str:
     return 'do some magic!'
 
-def monoframe_put() -> str:
+def monoframe_pixelmap_put(pixelmap, colour) -> str:
     return 'do some magic!'
 
-def monoline_put() -> str:
+def monoline_put(colour, line, pixelmap) -> str:
     return 'do some magic!'
 
 def show_get() -> str:
