@@ -8,3 +8,5 @@ LED arrary. The one I'm using is the Unicorn HAT from Pimoroni
 (https:://shop.pimoroni.com) from the UK.
 
 A robotics platform has yet to be selected for the main part of this work.
+
+And at the moment the library doesn't work :(
