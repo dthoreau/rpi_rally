@@ -11,7 +11,7 @@ def monoframe_pixelmap_put(pixelmap, colour) -> str:
     return 'do some magic!'
 
 def monoline_put(colour, line, pixelmap) -> str:
-    paint_monoline(line, pixelmap, colour["red"], colour["green"], colour["blue"])
+    paint_monoline(line, pixelmap, colour)
     UH.show()
     return 'do some magic!'
 
@@ -22,14 +22,14 @@ def show_get() -> str:
 def paint_dot(x,y,red,green,blue):
     UH.set_pixel(int(x), int(y),red,green,blue)
 
-def paint_monoline(line, details, red, green, blue):
+def paint_monoline(line, details, colour):
     index = [7,6,5,4,3,2,1,0]
     mappings = int(details, 16)
     for x in range(8):
         testx = 2**index[x]
         if mappings >= testx:
              mappings  = mappings - testx
-             paint_dot(x, line, red,green,blue)
+             paint_dot(x, line, colour["red"], colour["green"], colour["blue"])
         else:
              paint_dot(x, line, 0,0,0)
 
